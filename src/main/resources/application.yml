@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://sotf-save-manager.cjugehsgyjtm.eu-north-1.rds.amazonaws.com:3306/sotf_save_manager
+    username: admin
+    password: cebbes-4citno-kYnmub
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  data:
+    rest:
+      base-path: /rest
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: 12345
+debug: false
