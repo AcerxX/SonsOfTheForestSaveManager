@@ -1,6 +1,5 @@
 package ro.appbranch.sons_of_the_forest_save_manager.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.core.mapping.RepositoryDetectionStrategy;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -14,7 +13,6 @@ public class RepositoryConfig implements RepositoryRestConfigurer {
 
     private final EntityManager entityManager;
 
-    @Autowired
     public RepositoryConfig(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

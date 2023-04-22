@@ -3,20 +3,13 @@ package ro.appbranch.sons_of_the_forest_save_manager.scheduled;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.text.Normalizer;
-import java.text.Normalizer.Form;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 

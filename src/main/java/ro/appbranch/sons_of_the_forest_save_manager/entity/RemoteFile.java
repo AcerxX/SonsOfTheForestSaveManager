@@ -1,7 +1,5 @@
 package ro.appbranch.sons_of_the_forest_save_manager.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
