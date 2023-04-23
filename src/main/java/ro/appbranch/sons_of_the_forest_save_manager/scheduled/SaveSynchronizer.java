@@ -202,6 +202,7 @@ public class SaveSynchronizer {
                         log.info("Uploading new CLIENT FILE " + fileName);
 
                         remoteFile.setFileContent(fileContent);
+                        remoteFile.setFileTimestamp(fileTimestamp);
 
                         remoteFileRepository.save(remoteFile);
                     }
