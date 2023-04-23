@@ -25,8 +25,7 @@ const SelectUserPage = ({ userSetter, ...props }) => {
       })
   }
 
-  return
-  <>
+  return <>
     <Title level={5} style={{ marginBottom: '2rem' }}>Who are you MALAKA?</Title>
 
     <Row gutter={[16, 16]}>

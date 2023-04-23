@@ -38,7 +38,7 @@ public final class FileUtils {
             listOfFiles
                     .stream()
                     .filter(File::isFile)
-                    .filter(file -> !file.getName().toLowerCase().endsWith(".png"))
+                    .filter(file -> !file.getName().toLowerCase().endsWith(".png") && !file.getName().startsWith("."))
                     .forEach(file -> {
                         try {
                             Map<String, String> temp = new HashMap<>();
