@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import SelectUserPage from "./pages/SelectUserPage";
 import axios from "axios";
 import InitialSetup from "./pages/InitialSetup";
@@ -16,16 +15,24 @@ const Application = () => {
             .then(({ data }) => {
                 if (data.length > 0) {
                     setLoggedUser(data);
-
-                    axios.get(`/rest/users/search/findTopByUsername?username=${data}`)
-                        .then(({ data }) => {
-                            setUserData(data);
-                        });
                 }
 
                 setLoading(false);
             });
     }, []);
+
+    useEffect(() => {
+        if (loggedUser.length > 0) {
+            updateUserData();
+        }
+    }, [loggedUser]);
+
+    const updateUserData = () => {
+        axios.get(`/rest/users/search/findTopByUsername?username=${loggedUser}`)
+            .then(({ data }) => {
+                setUserData(data);
+            });
+    };
 
     return <div style={{
         display: 'flex',
@@ -56,7 +63,7 @@ const Application = () => {
         }
 
 
-        {(!loading && loggedUser.length > 0 && userData.clientId !== null && userData.hostId !== null) &&
+        {(!loading && loggedUser.length > 0 && Object.keys(userData).length > 0 && userData.clientId !== null && userData.hostId !== null) &&
             <>
                 <Title level={4}>All good!</Title>
                 <Title level={5}>Whenever you want to sync the save files, just open the console app (.jar file).</Title>
